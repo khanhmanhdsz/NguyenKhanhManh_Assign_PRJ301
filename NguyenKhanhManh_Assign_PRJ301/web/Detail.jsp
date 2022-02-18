@@ -1,118 +1,168 @@
 <%-- 
-    Document   : Detail
-    Created on : Dec 29, 2020, 5:43:04 PM
-    Author     : trinh
+    Document   : index.jsp
+    Created on : Feb 15, 2022, 8:17:14 PM
+    Author     : Le Hong Quan
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <link href="css/style.css" rel="stylesheet" type="text/css"/>
-        <style>
-            .gallery-wrap .img-big-wrap img {
-                height: 450px;
-                width: auto;
-                display: inline-block;
-                cursor: zoom-in;
-            }
-
-
-            .gallery-wrap .img-small-wrap .item-gallery {
-                width: 60px;
-                height: 60px;
-                border: 1px solid #ddd;
-                margin: 7px 2px;
-                display: inline-block;
-                overflow: hidden;
-            }
-
-            .gallery-wrap .img-small-wrap {
-                text-align: center;
-            }
-            .gallery-wrap .img-small-wrap img {
-                max-width: 100%;
-                max-height: 100%;
-                object-fit: cover;
-                border-radius: 4px;
-                cursor: zoom-in;
-            }
-            .img-big-wrap img{
-                width: 100% !important;
-                height: auto !important;
-            }
-        </style>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+            />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Shop Homepage - Start Bootstrap Template</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+            rel="stylesheet"
+            />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body>
-        <jsp:include page="Menu.jsp"></jsp:include>
-            <div class="container">
-                <div class="row">
-                <jsp:include page="Left.jsp"></jsp:include>
-                    <div class="col-sm-9">
-                        <div class="container">
-                            <div class="card">
-                                <div class="row">
-                                    <aside class="col-sm-5 border-right">
-                                        <article class="gallery-wrap"> 
-                                            <div class="img-big-wrap">
-                                                <div> <a href="#"><img src="https://canary.contestimg.wish.com/api/webimage/5c4a05a08b26e56dcf17a643-normal.jpg?cache_buster=6d01b751858e14e68932bb234cdc44c1"></a></div>
-                                            </div> <!-- slider-product.// -->
-                                            <div class="img-small-wrap">
-                                            </div> <!-- slider-nav.// -->
-                                        </article> <!-- gallery-wrap .end// -->
-                                    </aside>
-                                    <aside class="col-sm-7">
-                                        <article class="card-body p-5">
-                                            <h3 class="title mb-3">Giày đi chơi tết</h3>
+        <%@include file="components/navBarComponent.jsp" %>
 
-                                            <p class="price-detail-wrap"> 
-                                                <span class="price h3 text-warning"> 
-                                                    <span class="currency">US $</span><span class="num">$200</span>
-                                                </span> 
-                                            </p> <!-- price-detail-wrap .// -->
-                                            <dl class="item-property">
-                                                <dt>Description</dt>
-                                                <dd><p>
-                                                        Winter Men's Snow Boots Plus Velvet Cotton Shoes Men's Shoes Martin Cotton Boots Warm Shoes
-
-                                                    </p></dd>
-                                            </dl>
-
-                                            <hr>
-                                            <div class="row">
-                                                <div class="col-sm-5">
-                                                    <dl class="param param-inline">
-                                                        <dt>Quantity: </dt>
-                                                        <dd>
-                                                            <select class="form-control form-control-sm" style="width:70px;">
-                                                                <option> 1 </option>
-                                                                <option> 2 </option>
-                                                                <option> 3 </option>
-                                                            </select>
-                                                        </dd>
-                                                    </dl>  <!-- item-property .// -->
-                                                </div> <!-- col.// -->
-
-                                            </div> <!-- row.// -->
-                                            <hr>
-                                            <a href="#" class="btn btn-lg btn-primary text-uppercase"> Buy now </a>
-                                            <a href="#" class="btn btn-lg btn-outline-primary text-uppercase"> <i class="fas fa-shopping-cart"></i> Add to cart </a>
-                                        </article> <!-- card-body.// -->
-                                    </aside> <!-- col.// -->
-                                </div> <!-- row.// -->
-                            </div> <!-- card.// -->
-
-
+        <!-- Product section-->
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="row gx-4 gx-lg-5 align-items-center">
+                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="${product.imageUrl}" alt="..." /></div>
+                    <div class="col-md-6">
+                        <div class="small mb-1">SKU: BST-498</div>
+                        <h1 class="display-5 fw-bolder">${product.name}</h1>
+                        <div class="fs-5 mb-5">
+                            <span class="text-decoration-line-through">$45.00</span>
+                            <span>$${product.price}</span>
+                        </div>
+                        <p class="lead">${product.description}</p>
+                        <div class="d-flex">
+                            <a href="add-to-cart?productId=${product.id}" class="btn btn-outline-dark flex-shrink-0" type="button">
+                                <i class="bi-cart-fill me-1"></i>
+                                Add to cart
+                            </a>
+                            <a class="btn btn-outline-success flex-shrink-0 ms-2" type="button">
+                                <i class="bi-cart-fill me-1"></i>
+                                Buy now
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-        <jsp:include page="Footer.jsp"></jsp:include>
+        </section>
+        <!-- Related items section-->
+        <section class="py-5 bg-light">
+            <div class="container px-4 px-lg-5 mt-5">
+                <h2 class="fw-bolder mb-4">Related products</h2>
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Fancy Product</h5>
+                                    <!-- Product price-->
+                                    $40.00 - $80.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Special Item</h5>
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    <span class="text-muted text-decoration-line-through">$20.00</span>
+                                    $18.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Sale Item</h5>
+                                    <!-- Product price-->
+                                    <span class="text-muted text-decoration-line-through">$50.00</span>
+                                    $25.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Popular Item</h5>
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    $40.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <%@include file="components/footerComponent.jsp" %>
     </body>
 </html>
