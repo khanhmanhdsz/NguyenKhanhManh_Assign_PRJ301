@@ -16,6 +16,12 @@ public class Product {
     private int sell_ID;
     private int categoryId;
 
+    public Product() {
+    }
+
+    
+
+    
     public int getId() {
         return id;
     }

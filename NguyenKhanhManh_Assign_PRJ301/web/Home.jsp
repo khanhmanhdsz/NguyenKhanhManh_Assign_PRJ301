@@ -16,7 +16,7 @@
             />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Shop Homepage - Start Bootstrap Template</title>
+        <title>Fashion Feet</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -34,7 +34,7 @@
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-w
                      hite">
-                    <h1 class="display-4 fw-bolder">Fashion Feet</h1>
+                    <h1 class="display-4 fw-bolder" style="color: white">Fashion Feet</h1>
                     <p class="lead fw-normal text-white-50 mb-0">
                         Good to the last drop!
                     </p>
