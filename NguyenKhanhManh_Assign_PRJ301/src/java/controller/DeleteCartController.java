@@ -5,7 +5,6 @@
  */
 package controller;
 
-import dal.ProductDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.LinkedHashMap;
@@ -17,15 +16,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.Cart;
-import model.Product;
 
 /**
  *
- * @author Le Hong Quan
+ * @author Admin
  */
-
-@WebServlet(name = "AddToCartController", urlPatterns = {"/add-to-cart"})
-public class AddToCartController extends BaseRequiredAuthenController {
+@WebServlet(name = "DeleteCartController", urlPatterns = {"/delete-cart"})
+public class DeleteCartController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,36 +33,27 @@ public class AddToCartController extends BaseRequiredAuthenController {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequests(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            int productId = Integer.parseInt(request.getParameter("productId"));
-            //map    productId | cart
+           int productId = Integer.parseInt(request.getParameter("productId"));
+           
             HttpSession session = request.getSession();
+            
             Map<Integer, Cart> carts = (Map<Integer, Cart>) session.getAttribute("carts");
             if (carts == null) {
                 carts = new LinkedHashMap<>();
             }
-
-            if (carts.containsKey(productId)) {//sản phẩm đã có trên giỏ hàng
-                int oldQuantity = carts.get(productId).getQuantity();
-                carts.get(productId).setQuantity(oldQuantity + 1);
-            } else {//sản phẩm chưa có trên giỏ hàng
-                Product product = new ProductDBContext().getProductById(productId);
-                carts.put(productId, new Cart(product, 1));
+            
+            if(carts.containsKey(productId)){
+                carts.remove(productId);
             }
-            //lưu carts lên session
             session.setAttribute("carts", carts);
-            String urlHistory = (String) session.getAttribute("urlHistory");
-            if (urlHistory == null) {
-                urlHistory = "home";
-            }
-            response.sendRedirect(urlHistory);
+            response.sendRedirect("carts");
         }
     }
-    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

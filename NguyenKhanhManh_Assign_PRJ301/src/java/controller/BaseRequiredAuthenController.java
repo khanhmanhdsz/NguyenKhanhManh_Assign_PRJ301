@@ -5,43 +5,43 @@
  */
 package controller;
 
-import dal.ProductDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Product;
+import model.Account;
 
 /**
  *
- * @author Le Hong Quan
+ * @author Admin
  */
-public class DetailController extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+public abstract class BaseRequiredAuthenController extends HttpServlet {
+
+    private boolean isAuthenticated(HttpServletRequest request)
+    {
+        Account account = (Account)request.getSession().getAttribute("acc");
+        return account != null;
+    }
+    
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-           int productId = Integer.parseInt(request.getParameter("productId"));
-            request.getSession().setAttribute("urlHistory", "detail?productId="+productId);
-            Product product = new ProductDBContext().getProductById(productId);
-            request.setAttribute("product", product);
-            request.getRequestDispatcher("detail.jsp").forward(request, response);
+        if(isAuthenticated(request))
+        {
+            processRequests(request, response);
+        }
+        else
+        {
+            response.sendRedirect("login.jsp");
         }
     }
-
+    protected abstract void processRequests(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException;
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

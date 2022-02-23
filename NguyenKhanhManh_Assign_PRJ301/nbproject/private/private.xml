@@ -2,39 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/src/java/controller/HomeController.java</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/web/WEB-INF/web.xml</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/src/java/controller/CategoryController.java</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/src/java/controller/SignupController.java</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/web/js/ManagerProduct.js</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/src/java/controller/LogoutControl.java</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/src/java/model/Category.java</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/src/java/model/Account.java</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/src/java/controller/DeleteProductController.java</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/web/home.jsp</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/src/java/controller/LoadController.java</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/src/java/controller/SearchController.java</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/src/java/controller/ManagerController.java</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/web/detail.jsp</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/web/css/styles.css</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/web/js/login.js</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/src/java/controller/AddProductController.java</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/web/css/login.css</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/src/java/controller/LoginController.java</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/web/components/navBarComponent.jsp</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/web/js/scripts.js</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/web/components/footerComponent.jsp</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/src/java/dal/CategoryDBContext.java</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/web/login.jsp</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/src/java/controller/DetailController.java</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/src/java/dal/AcountDBContext.java</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/web/ManagerProduct.jsp</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/src/java/controller/AddToCartController.java</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/web/css/ManagerProduct.css</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/src/java/controller/EditProductController.java</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/src/java/dal/DBContext.java</file>
-            <file>file:/D:/Ky_4/PRJ301/Codewebmanh/NguyenKhanhManh_Assgin_PRJ301/NguyenKhanhManh_Assign_PRJ301/NguyenKhanhManh_Assign_PRJ301/src/java/dal/ProductDBContext.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
