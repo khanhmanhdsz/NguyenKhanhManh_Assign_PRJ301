@@ -42,6 +42,9 @@ public class LoginController extends HttpServlet {
         if (a==null) {
             request.setAttribute("mess", "Wrong user or pass");
             request.getRequestDispatcher("login.jsp").forward(request, response);           
+        }else if (a.isActive()== false) {
+            request.setAttribute("mess", "Account has been banned");
+            request.getRequestDispatcher("login.jsp").forward(request, response);
         }else{
             HttpSession session = request.getSession();
             session.setAttribute("acc", a);

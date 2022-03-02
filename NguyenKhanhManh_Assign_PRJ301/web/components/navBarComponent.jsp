@@ -34,7 +34,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                 <c:if test="${sessionScope.acc.isAdmin == 1}">
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="">Manager Account</a>
+                    <a class="nav-link active" aria-current="page" href="managerAccount">Manager Account</a>
                     </li>
                 </c:if>
                 <c:if test="${sessionScope.acc.isSell == 1}">

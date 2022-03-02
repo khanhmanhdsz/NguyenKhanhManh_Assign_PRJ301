@@ -1,12 +1,11 @@
 <%-- 
-    Document   : viewCart
-    Created on : Feb 23, 2022, 10:32:01 PM
+    Document   : thanks
+    Created on : Mar 2, 2022, 5:05:27 PM
     Author     : Admin
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -30,14 +29,9 @@
     <body>
         <%@include file="components/navBarComponent.jsp" %>
 
-        <!-- Product section-->
-        <section class="py-5">
-
-            <div class="container" style="min-height: 1000px">
-                <h1>Checkout</h1>
-                <div class="row">
-                    <div class="col-md-8" style="border: 1px solid #ccc; border-radius: 5px; padding: 1rem">
-                        <h3>List Products</h3>
+        <div class="container" style="min-height: 1000px">
+            <div class="alert alert-success text-center mt-5" role="alert" >
+                <h3>List Products</h3>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -50,7 +44,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <c:forEach items="${carts}" var="C">
+                                <c:forEach items="${cartss}" var="C">
                                     <tr>
                                 <input type="hidden" name="productId" value="${C.value.product.id}"/>
                                 <th scope="row">${C.value.product.id}</th>
@@ -63,34 +57,13 @@
                             </c:forEach>
                             </tbody>
                         </table>
-                        <h3>Total Amount: $${totalMoney}</h3>
-                    </div>
-                    <div class="col-md-4" style="border: 1px solid #ccc; border-radius: 5px; padding: 1rem">
-                        <h3>Information of customer</h3>
-                        <form action="checkout" method="POST">
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp">
-                            </div>
-                            <div class="mb-3">
-                                <label for="phone" class="form-label">Phone</label>
-                                <input type="text" class="form-control" id="phone" name="phone" aria-describedby="emailHelp">
-                            </div>
-                            <div class="mb-3">
-                                <label for="address" class="form-label">Address</label>
-                                <input type="text" class="form-control" id="address" name="address" aria-describedby="emailHelp">
-                            </div>
-                            <div class="mb-3">
-                                <label for="note" class="form-label">Note</label>
-                                <textarea class="form-control" id="note" name="note" rows="3"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary w-100">Submit</button>
-                        </form>
-                    </div>
+                        <h3>Total Amount: $${totalPrice}</h3>
+                Order successfully, Thank you very much...
+                <div class="text-center mt-2">
+                    <a class="btn btn-outline-primary" href="home">Continue Shopping</a>
                 </div>
             </div>
-        </section>
+        </div>
         <%@include file="components/footerComponent.jsp" %>
     </body>
 </html>
-

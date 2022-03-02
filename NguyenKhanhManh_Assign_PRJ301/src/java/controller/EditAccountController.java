@@ -5,25 +5,25 @@
  */
 package controller;
 
-import dal.CategoryDBContext;
+import dal.AcountDBContext;
 import dal.ProductDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import model.Category;
+import model.Account;
 import model.Product;
 
 /**
  *
- * @author Le Hong Quan
+ * @author Admin
  */
-public class HomeController extends HttpServlet {
+@WebServlet(name = "EditAccountController", urlPatterns = {"/EditAccount"})
+public class EditAccountController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,30 +37,17 @@ public class HomeController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        final int PAGE_SIZE = 15;
-
-        List<Category> listCategories = new CategoryDBContext().getAllCategories();
-        request.setAttribute("listCategories", listCategories);
+        Account account = new Account();
+        account.setUid(Integer.parseInt(request.getParameter("id")));
+        account.setUser(request.getParameter("user"));
+        account.setPass(request.getParameter("pass"));
+        account.setIsSell(Integer.parseInt(request.getParameter("issell")));
+        account.setIsAdmin(0);
+        account.setActive(Boolean.parseBoolean(request.getParameter("active")));
         
-        int page = 1;
-        String pageStr = request.getParameter("page");
-        if (pageStr != null) {
-            page = Integer.parseInt(pageStr);
-        }
-
-        ProductDBContext productDAO = new ProductDBContext();
-        List<Product> listProducts = productDAO.getProductsWithPagging(page, PAGE_SIZE);
-        int totalProducts = productDAO.getTotalProducts();
-        int totalPage = totalProducts / PAGE_SIZE;
-        if (totalProducts % PAGE_SIZE != 0) {
-            totalPage += 1;
-        }
-        request.setAttribute("page", page);
-        request.setAttribute("totalPage", totalPage);
-        request.setAttribute("listProducts", listProducts);
-        
-        request.getSession().setAttribute("urlHistory", "home");
-        request.getRequestDispatcher("home.jsp").forward(request, response);
+        AcountDBContext adb = new AcountDBContext();
+        adb.updateAccount(account);
+        response.sendRedirect("managerAccount");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

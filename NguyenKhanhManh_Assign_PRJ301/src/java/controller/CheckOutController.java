@@ -5,6 +5,9 @@
  */
 package controller;
 
+import dal.OrderDBcontext;
+import dal.OrderDetailDBcontext;
+import dal.ShippingDBcontext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.LinkedHashMap;
@@ -15,7 +18,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import model.Account;
 import model.Cart;
+import model.Order;
+import model.Shipping;
 
 /**
  *
@@ -83,7 +89,47 @@ public class CheckOutController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        String name = request.getParameter("name");
+        String phone = request.getParameter("phone");
+        String address = request.getParameter("address");
+        String note = request.getParameter("note");
+
+        //lưu vào database
+        //Lưu Shipping
+        Shipping shipping = new Shipping( name, phone, address);
+
+        int shippingId = new ShippingDBcontext().createReturnId(shipping); //trả về id tự tăng của bản ghi vừa lưu vào database
+        //Lưu Order
+        HttpSession session = request.getSession();
+        Map<Integer, Cart> carts = (Map<Integer, Cart>) session.getAttribute("carts");
+        if (carts == null) {
+            carts = new LinkedHashMap<>();
+        }
+
+        //tinh tong tien
+        double totalPrice = 0;
+        for (Map.Entry<Integer, Cart> entry : carts.entrySet()) {
+            Integer productId = entry.getKey();
+            Cart cart = entry.getValue();
+
+            totalPrice += cart.getQuantity() * cart.getProduct().getPrice();
+
+        }
+
+        Account a = (Account)request.getSession().getAttribute("acc");
+        Order order = new Order(a.getUid(),totalPrice,note,shippingId);
+                
+        int orderId = new OrderDBcontext().createReturnId(order);
+        //Lưu OrderDetail
+
+        new OrderDetailDBcontext().saveCart(orderId, carts);
+
+        session.removeAttribute("carts");
+        request.setAttribute("cartss", carts);
+        request.setAttribute("totalPrice", totalPrice);
+        request.getRequestDispatcher("thank").forward(request, response);
     }
 
     /**

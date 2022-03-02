@@ -35,6 +35,7 @@ public class LogoutControl extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
         session.removeAttribute("acc");
+        session.removeAttribute("carts");
         response.sendRedirect("home");
     }
 
