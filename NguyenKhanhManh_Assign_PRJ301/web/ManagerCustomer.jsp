@@ -77,7 +77,7 @@
                                 </td>
                                 <td>${p.uid}</td>
                                 <td>${p.user}</td>
-                                <td><${p.pass}</td>
+                                <td>${p.pass}</td>
                                 <td>${p.isSell}</td>
                                 <td>${p.active}</td>
                                 <td>
