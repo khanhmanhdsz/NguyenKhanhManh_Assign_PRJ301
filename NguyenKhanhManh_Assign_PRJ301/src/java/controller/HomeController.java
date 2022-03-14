@@ -19,10 +19,7 @@ import javax.servlet.http.HttpSession;
 import model.Category;
 import model.Product;
 
-/**
- *
- * @author Le Hong Quan
- */
+
 public class HomeController extends HttpServlet {
 
     /**

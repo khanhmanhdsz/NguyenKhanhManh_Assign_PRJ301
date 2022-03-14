@@ -17,10 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.Cart;
 
-/**
- *
- * @author Le Hong Quan
- */
+
 @WebServlet(name = "UpdateCartQuantityController", urlPatterns = {"/update-quantity"})
 
 public class UpdateCartQuantityController extends HttpServlet {

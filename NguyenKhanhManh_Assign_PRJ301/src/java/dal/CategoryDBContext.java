@@ -14,10 +14,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Category;
 
-/**
- *
- * @author Le Hong Quan
- */
 public class CategoryDBContext extends DBContext{ //thao tác với bảng category
 
     public List<Category> getAllCategories() {

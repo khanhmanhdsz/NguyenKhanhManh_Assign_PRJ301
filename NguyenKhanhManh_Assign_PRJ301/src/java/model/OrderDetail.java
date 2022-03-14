@@ -7,10 +7,7 @@ package model;
 
 
 
-/**
- *
- * @author Le Hong Quan
- */
+
 
 public class OrderDetail {
 

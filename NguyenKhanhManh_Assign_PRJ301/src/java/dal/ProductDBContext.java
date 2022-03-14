@@ -16,10 +16,7 @@ import java.util.logging.Logger;
 import model.Category;
 import model.Product;
 
-/**
- *
- * @author Le Hong Quan
- */
+
 public class ProductDBContext extends DBContext {
 
     public List<Product> getAllProducts() {

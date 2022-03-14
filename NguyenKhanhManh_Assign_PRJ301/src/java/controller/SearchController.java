@@ -17,10 +17,6 @@ import javax.servlet.http.HttpServletResponse;
 import model.Category;
 import model.Product;
 
-/**
- *
- * @author Le Hong Quan
- */
 public class SearchController extends HttpServlet {
 
     /**

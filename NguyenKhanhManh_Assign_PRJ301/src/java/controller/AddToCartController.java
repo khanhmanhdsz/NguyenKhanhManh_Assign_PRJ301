@@ -19,10 +19,7 @@ import javax.servlet.http.HttpSession;
 import model.Cart;
 import model.Product;
 
-/**
- *
- * @author Le Hong Quan
- */
+
 
 @WebServlet(name = "AddToCartController", urlPatterns = {"/add-to-cart"})
 public class AddToCartController extends BaseRequiredAuthenController {

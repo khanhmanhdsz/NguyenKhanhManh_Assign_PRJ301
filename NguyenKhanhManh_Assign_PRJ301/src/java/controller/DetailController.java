@@ -15,10 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Product;
 
-/**
- *
- * @author Le Hong Quan
- */
+
 public class DetailController extends HttpServlet {
 
     /**
