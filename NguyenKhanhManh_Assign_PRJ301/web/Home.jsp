@@ -108,7 +108,7 @@
                                                 </div>
                                                 <!-- Product price-->
                                                 <span class="text-muted text-decoration-line-through"
-                                                      >$20.00</span
+                                                      >$${P.price+10}</span
                                                 >
                                                 $${P.price}
                                             </div>

@@ -266,4 +266,35 @@ public class ProductDBContext extends DBContext {
 
     }
 
+    public List<Product> getAllProductsLast() {
+        List<Product> list = new ArrayList<>();
+        try {
+            String sql = "SELECT TOP 4 * FROM product ORDER BY ID DESC";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Product product = new Product();
+                product.setId(rs.getInt(1));
+                product.setName(rs.getString(2));
+                product.setImageUrl(rs.getString(3));
+                product.setPrice(rs.getDouble(4));
+                product.setTiltle(rs.getString(5));
+                product.setDescription(rs.getString(6));
+                product.setCategoryId(rs.getInt(7));
+                product.setSell_ID(rs.getInt(8));
+                list.add(product);
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(CategoryDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+    }
+    
+    public static void main(String[] args) {
+        ProductDBContext a = new ProductDBContext();
+        List<Product> list = a.getAllProductsLast();
+        for (Product product : list) {
+            System.out.println(product.getName());
+        }
+    }
 }

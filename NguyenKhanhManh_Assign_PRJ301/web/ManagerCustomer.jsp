@@ -21,6 +21,12 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link href="css/ManagerProduct.css" rel="stylesheet" type="text/css"/>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+            rel="stylesheet"
+            />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
         <style>
             img{
                 width: 200px;
@@ -31,12 +37,12 @@
             function back() {
                 window.location.href = "home";
             }
-             function doDelete(id)
+            function doDelete(id)
             {
                 var c = confirm("Are you sure?");
-                if(c)
+                if (c)
                 {
-                    window.location.href = "delete?pid="+id;
+                    window.location.href = "delete?pid=" + id;
                 }
             }
         </script>
@@ -47,7 +53,7 @@
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">
-                            <h2>Manage <b>Account</b></h2>   
+                        <h2>Manage <b>Account</b></h2>   
                     </div>
                 </div>
                 <table class="table table-striped table-hover">
@@ -64,6 +70,7 @@
                             <th>Pass</th>
                             <th>IsSell</th>
                             <th>Active</th>
+                            <th>Edit</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -79,9 +86,19 @@
                                 <td>${p.user}</td>
                                 <td>${p.pass}</td>
                                 <td>${p.isSell}</td>
-                                <td>${p.active}</td>
                                 <td>
-                                <a href="loadAccount?pid=${p.uid}"  class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+
+                                    <c:choose>
+                                        <c:when test="${p.active}">
+                                            <i class="bi bi-toggle-on"></i>
+                                        </c:when>    
+                                        <c:otherwise>
+                                            <i class="bi bi-toggle2-off"></i>
+                                        </c:otherwise>
+                                    </c:choose>
+
+                                <td>
+                                    <a href="loadAccount?pid=${p.uid}"  class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                                 </td>
                             </tr>
                         </c:forEach>
@@ -103,8 +120,8 @@
             <a href="#">
                 <button type="button" class="btn btn-primary" onclick="back()">Back to home</button>
 
-        
 
-        <script src="js/ManagerProduct.js" type="text/javascript"></script>
-    </body>
-</html>
+
+                <script src="js/ManagerProduct.js" type="text/javascript"></script>
+                </body>
+                </html>

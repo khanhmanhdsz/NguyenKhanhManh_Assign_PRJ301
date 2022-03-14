@@ -8,6 +8,7 @@ package controller;
 import dal.ProductDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -36,8 +37,11 @@ public class DetailController extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
            int productId = Integer.parseInt(request.getParameter("productId"));
             request.getSession().setAttribute("urlHistory", "detail?productId="+productId);
-            Product product = new ProductDBContext().getProductById(productId);
+            ProductDBContext pdb = new ProductDBContext();
+            Product product = pdb.getProductById(productId);
+            List<Product> listLast = pdb.getAllProductsLast();
             request.setAttribute("product", product);
+            request.setAttribute("listLast", listLast);
             request.getRequestDispatcher("detail.jsp").forward(request, response);
         }
     }

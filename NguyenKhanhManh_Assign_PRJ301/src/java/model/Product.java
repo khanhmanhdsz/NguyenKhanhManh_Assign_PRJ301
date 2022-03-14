@@ -7,14 +7,14 @@ package model;
 
 
 public class Product {
-    private int id;
-    private String name;
-    private String imageUrl;
-    private double price;
-    private String tiltle;
-    private String description;
-    private int sell_ID;
-    private int categoryId;
+   int id;
+     String name;
+     String imageUrl;
+     double price;
+     String tiltle;
+     String description;
+     int sell_ID;
+     int categoryId;
 
     public Product() {
     }
