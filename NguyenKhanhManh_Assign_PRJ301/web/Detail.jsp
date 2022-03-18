@@ -62,6 +62,7 @@
                                 <!-- Sale badge-->
                                 <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                                 <!-- Product image-->
+                                <a href="detail?productId=${L.id}">
                                 <img class="card-img-top" src="${L.imageUrl}" alt="..." />
                                 <!-- Product details-->
                                 <div class="card-body p-4">

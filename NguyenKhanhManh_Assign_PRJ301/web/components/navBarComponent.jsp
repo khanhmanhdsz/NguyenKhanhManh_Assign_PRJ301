@@ -36,6 +36,9 @@
                     <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="managerAccount">Manager Account</a>
                     </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="managerCategory">Manager Category</a>
+                    </li>
                 </c:if>
                 <c:if test="${sessionScope.acc.isSell == 1}">
                     <li class="nav-item">
